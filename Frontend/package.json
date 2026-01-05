@@ -1,35 +1,20 @@
 {
-    "name": "new",
-    "version": "1.0.0",
-    "description": "",
-    "keywords": [],
-    "main": "src/index.js",
-    "dependencies": {
-        "jspdf": "^2.5.2",
-        "jspdf-autotable": "^5.0.2",
-        "react": "19.2.0",
-        "react-dom": "19.2.0",
-        "react-router-dom": "^6.30.1",
-        "react-scripts": "3.0.1"
-    },
-    "devDependencies": {
-        "typescript": "3.3.3"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-"scripts": {
-  "dev": "NODE_OPTIONS=--openssl-legacy-provider vite",
-  "build": "NODE_OPTIONS=--openssl-legacy-provider vite build",
-  "preview": "vite preview"
+  "name": "nur-collection-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.1",
+    "react-scripts": "5.0.1"
+  }
 }
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ]
-}
+
