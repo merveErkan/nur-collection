@@ -8,22 +8,10 @@
     "react-router-dom": "^6.30.1",
     "react-scripts": "5.0.1",
     "jspdf": "^2.5.2",
-    "jspdf-autotable": "^5.0.2"
+    "jspdf-autotable": "^3.8.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
