@@ -1,0 +1,312 @@
+/* Genel görünüm */
+.panel-container {
+    display: flex;
+    flex-direction: row;
+
+    /* TÜM çocuklar (sol panel + sağ panel) ÜSTE hizalansın */
+    align-items: flex-start;
+
+    /* Sağ ve sol panel yatayda dağılsın */
+    justify-content: space-between;
+    height: 670px;
+    width: 1260px;
+    background: #d3e9ddff;
+    margin: 0px auto;
+    padding: 0;
+    border: 1px solid gray;
+    border-radius: 28px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .panel-content {
+        overflow-y: auto;
+
+    }
+
+
+}
+
+/* Sol kısım (sidebar / menü) */
+.panel-left {
+    width: 170px;
+    height: 670px;
+    background: linear-gradient(180deg, #2f4036, #80ab8c);
+    color: white;
+    display: flex;
+    overflow-y: auto;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+}
+
+.panel-left h2 {
+    font-size: 30px;
+    margin-bottom: 65px;
+}
+
+.panel-left form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Sağ kısım (ana içerik) */
+.panel-right {
+    flex: 1;
+    /* Kaydırma için en kritik satır: Ekranın kalanını kapla ve taşmaya izin ver */
+    height: 100vh;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Yatayda ortala */
+    justify-content: flex-start;
+    /* Üstten başla */
+
+    padding: 20px;
+    box-sizing: border-box;
+    /* Padding'in yüksekliği bozmasını engeller */
+}
+
+.panel-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    /* Form çok genişlemesin */
+    padding-bottom: 50px;
+    /* En alttaki butondan sonra boşluk bırakır */
+}
+
+
+/* Menü butonları */
+.panel-left button {
+    width: 200px;
+    padding: 15px 20px;
+    background-color: #7fa997;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.panel-button:hover {
+    background-color: #95a99eff;
+}
+
+
+/* Çalışan tablosu */
+.panel-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel_button {
+    width: 200px;
+    padding: 15px 20px;
+    background-color: #7fa997;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-grid {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4’lü kolon */
+    gap: 20px;
+    justify-items: center;
+    /* kartları ortalar */
+    padding-bottom: 50px;
+}
+
+.product-gridcart {
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 4’lü kolon */
+    column-gap: 8px;
+    /* 🔽 yatay boşluk */
+    row-gap: 12px;
+    /* 🔽 dikey boşluk */
+    justify-content: start;
+    /* 🔥 GRID’İ SOLA DAYAR */
+    justify-items: start;
+    /* kartları ortalar */
+    padding-bottom: 50px;
+}
+
+/* Kart görünümü */
+.product-card {
+    width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    object-position: top;
+    border-radius: 8px;
+}
+
+.product-card button {
+    margin-top: 10px;
+    background: #538456;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #6a9d7c;
+}
+
+.cart-button-small {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-button-small:hover {
+    background: #388e3c;
+    transform: scale(1.07);
+}
+
+
+.cart-layout {
+    display: flex;
+    width: 90%;
+    gap: 0px;
+    padding-left: 100px;
+    /* 👈 SOL BOŞLUK */
+    padding-right: 20px;
+    /* 👈 SAĞ BOŞLUK (denge için) */
+}
+
+
+/* Ürünler */
+.cart-products {
+    flex: 2;
+}
+
+/* Ödeme alanı */
+.cart-payment {
+    flex: 1;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+
+}
+
+/* Butonlar */
+.pay-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: #538456;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: #c0392b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Tablo Genel Stili */
+.orders-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    /* Tablo arka planı için eklendi */
+}
+
+
+.confirm-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #27ae60;
+}
+
+
+.reject-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.reject-btn:hover {
+    background-color: #c0392b;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}

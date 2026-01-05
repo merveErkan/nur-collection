@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Approvals.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Category..sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Customer.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Employee.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Login.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Order.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Person.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Product.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Supplier.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Supplies.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/console.sql" dialect="PostgreSQL" />
+    <file url="file://$USER_HOME$/Downloads/ContainerSon/Container.sql" dialect="PostgreSQL" />
+  </component>
+</project>

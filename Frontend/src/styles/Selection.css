@@ -1,0 +1,128 @@
+/* Ana kapsayıcı */
+.roll-selection {
+  display: flex;
+  /* Öğeleri yatay veya dikey hizalamak için esnek kutu düzeni kullanılır */
+  flex-direction: row;
+  /* Öğeleri yatayda (yan yana) sıralar */
+  align-items: center;
+  /* Öğeleri dikeyde ortalar */
+  justify-content: space-between;
+  /* Sol ve sağda boşluk bırakır, öğeleri iki uca iter */
+  height: 500px;
+  /* Kapsayıcının yüksekliği */
+  width: 900px;
+  /* Kapsayıcının genişliği */
+  background: #d3e9ddff;
+  /* Arka plan rengi */
+  margin: 50px auto;
+  /* Sayfada ortalar (üstten 200px boşlukla) */
+  padding: 0px;
+  /* İç boşluk yok */
+  border: 1px solid gray;
+  /* Gri kenarlık */
+  border-radius: 28px;
+  /* Köşeleri yuvarlatır */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge efekti */
+  overflow: hidden;
+  /* Görsel veya içerik taşarsa gizler */
+}
+
+/* Sol taraf (butonlar ve başlık) */
+.roll-left {
+  display: flex;
+  flex-direction: column;
+  /* 1. İçeriği her zaman en üstten başlat (Hatanın çözümü) */
+  justify-content: flex-start;
+  align-items: center;
+
+  /* 2. Kendi içinde kaydırılabilir yap */
+  overflow-y: auto;
+  height: 100%;
+
+  /* 3. Üstten ve alttan istediğin boşluğu padding ile ver */
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* 4. Padding'in toplam yüksekliği (670px) bozmaması için */
+  box-sizing: border-box;
+
+  gap: 15px;
+  flex: 1;
+}
+
+.roll-left h2 {
+  color: #f5f5f5;
+  font-family: sans-serif;
+  /* Başlığın altına ekstra boşluk istersen: */
+  margin-bottom: 20px;
+}
+
+
+/* Sağ taraf (görsel) */
+.roll-right {
+  flex: 1;
+  /* genişliğin diğer yarısı */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background: linear-gradient(#2f4036, #d3e9dd);
+  /* geçişli renk */
+  /* veya tek renk istersen: background-color: #f2f7ff; */
+  margin: 0;
+  height: 100vh;
+  /* ekran yüksekliği kadar */
+  display: flex;
+  /* ortalamak için flex */
+  align-items: center;
+  /* dikeyde ortala */
+  justify-content: center;
+  /* yatayda ortala */
+}
+
+/* Görsel */
+.roll-right img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+/* Butonlar */
+.roll-left button {
+  width: 250px;
+  padding: 15px 20px;
+  background-color: #1f513b;
+  color: white;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.roll-left button:hover {
+  background-color: #95a99eff;
+}
+
+/* Login formu */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Giriş alanları */
+.login-form input {
+  width: 250px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1f513b;
+  font-size: 16px;
+  outline: none;
+}
