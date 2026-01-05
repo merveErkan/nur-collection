@@ -8,7 +8,7 @@ function ProductCart() {
 
     // 1. Ürün listesini çek (Fiyat vb. güncel bilgiler için gerekebilir)
     useEffect(() => {
-        fetch("http://localhost:5003/product/list")
+        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/product/list")
             .then(res => res.json())
             .then(data => {
                 if (data.success) setProducts(data.products);
@@ -84,7 +84,7 @@ function ProductCart() {
         };
 
         try {
-            const response = await fetch("http://localhost:5003/order/create", {
+            const response = await fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/order/create", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(orderData)

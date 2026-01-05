@@ -19,7 +19,7 @@ function Account() {
             return;
         }
 
-        fetch(`http://localhost:5003/customer/info/${personId}`)
+        fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/customer/info/${personId}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {

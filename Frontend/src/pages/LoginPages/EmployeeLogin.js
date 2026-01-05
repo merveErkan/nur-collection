@@ -18,7 +18,7 @@ function EmployeeLogin() {
     e.preventDefault(); // Burada giriş işlemi yapılacak
 
     try {
-      const response = await fetch("http://localhost:5003/employee/login", {
+      const response = await fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/employee/login", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username, password }),

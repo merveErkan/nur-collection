@@ -32,7 +32,7 @@ function Details() {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5003/product/${id}`)
+        fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/product/${id}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Sunucu hatası: " + res.status);
                 return res.json();
