@@ -17,6 +17,11 @@
     },
     "scripts": {
         "start": "react-scripts start",
+"scripts": {
+  "dev": "NODE_OPTIONS=--openssl-legacy-provider vite",
+  "build": "NODE_OPTIONS=--openssl-legacy-provider vite build",
+  "preview": "vite preview"
+}
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
