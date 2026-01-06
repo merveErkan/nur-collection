@@ -35,7 +35,7 @@ function CustomerSignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/customer/signup", {
+      const response = await fetch("http://localhost:5003/customer/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

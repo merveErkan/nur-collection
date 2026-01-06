@@ -20,7 +20,7 @@ function MyOrder() {
             console.log("Sorgulanan Person ID:", info.person_id);
             const pId = info.person_id;
 
-            fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/order/my-orders/${pId}`)
+            fetch(`http://localhost:5003/order/my-orders/${pId}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log("Backend'den gelen veri:", data);

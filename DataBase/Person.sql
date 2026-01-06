@@ -22,4 +22,10 @@ SET city = 'istanbul', postal_code = '34000'
 WHERE person_id = 4;
 
 
+SELECT order_id
+FROM Orders
+INNER JOIN Customer On (customerid = order.customerid);
+
+
+
 SELECT * FROM Person;

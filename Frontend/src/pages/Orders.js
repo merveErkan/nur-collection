@@ -9,12 +9,12 @@ function Orders() {
     const fetchData = async () => {
         try {
 
-            const resP = await fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/order/pending");
+            const resP = await fetch("http://localhost:5003/order/pending");
             const dataP = await resP.json();
             if (dataP.success) setPendingOrders(dataP.orders);
 
 
-            const resA = await fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/order/approved-list");
+            const resA = await fetch("http://localhost:5003/order/approved-list");
             const dataA = await resA.json();
             if (dataA.success) setApprovedOrders(dataA.orders);
         } catch (error) {
@@ -24,7 +24,7 @@ function Orders() {
     useEffect(() => { fetchData(); }, []);
 
     useEffect(() => {
-        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/order/pending")
+        fetch("http://localhost:5003/order/pending")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -34,7 +34,7 @@ function Orders() {
     }, []);
 
     const handleApprove = async (id) => {
-        const res = await fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/order/approve/${id}`, {
+        const res = await fetch(`http://localhost:5003/order/approve/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -52,7 +52,7 @@ function Orders() {
     const handleReject = async (id) => {
         if (!window.confirm("Bu siparişi reddetmek ve tamamen silmek istediğine emin misin?")) return;
 
-        const res = await fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/order/reject/${id}`, {
+        const res = await fetch(`http://localhost:5003/order/reject/${id}`, {
             method: "DELETE"
         });
         const data = await res.json();

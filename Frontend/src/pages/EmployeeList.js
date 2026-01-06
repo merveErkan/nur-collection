@@ -13,7 +13,7 @@ function EmployeeList() {
 
     // API'den çalışanları çek
     useEffect(() => {
-        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/manager/employeeList")
+        fetch("http://localhost:5003/manager/employeeList")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -27,7 +27,7 @@ function EmployeeList() {
         if (!window.confirm("Are you sure you want to delete this employee??")) return;
 
         try {
-            const response = await fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/manager/employeeDelete/${id}`, {
+            const response = await fetch(`http://localhost:5003/manager/employeeDelete/${id}`, {
                 method: "DELETE"
             });
 

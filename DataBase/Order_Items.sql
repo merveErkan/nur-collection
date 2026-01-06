@@ -6,21 +6,23 @@ CREATE TABLE order_items (
     price NUMERIC(10, 2) NOT NULL
 );
 
+
+
 --Trigger
 CREATE OR REPLACE FUNCTION update_product_stock()
 RETURNS TRIGGER AS $$
 DECLARE
     current_stock INTEGER;
 BEGIN
-    -- Mevcut stoğu kilitleyerek okuyoruz
+
     SELECT quantity INTO current_stock FROM product WHERE product_id = NEW.product_id FOR UPDATE;
 
-    -- Stok kontrolü yap
+
     IF current_stock < NEW.quantity THEN
         RAISE EXCEPTION 'Insufficient stock! Available: %, Required: %', current_stock, NEW.quantity;
     END IF;
 
-    -- Stok düşürme
+
     UPDATE product
     SET quantity = quantity - NEW.quantity
     WHERE product_id = NEW.product_id;

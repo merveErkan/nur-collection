@@ -24,7 +24,7 @@ function ProductList() {
 
     // 1. Ürünleri çeken useEffect
     useEffect(() => {
-        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/product/list")
+        fetch("http://localhost:5003/product/list")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -72,7 +72,7 @@ function ProductList() {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this product??")) return;
         try {
-            const response = await fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/product/delete/${id}`, { method: "DELETE" });
+            const response = await fetch(`http://localhost:5003/product/delete/${id}`, { method: "DELETE" });
             const data = await response.json();
             if (data.success) {
                 alert("Product deleted!");
@@ -103,7 +103,7 @@ function ProductList() {
     const handleIncreaseStock = async (productId) => {
         // URL'deki 'manager' kısmını 'product' olarak değiştirdik
         try {
-            const response = await fetch(`https://nur-collection-backend-860749273875.europe-west1.run.app/product/increaseStock/${productId}`, {
+            const response = await fetch(`http://localhost:5003/product/increaseStock/${productId}`, {
                 method: "POST"
             });
 

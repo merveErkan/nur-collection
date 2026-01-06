@@ -8,7 +8,7 @@ function Reports() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/manager/generalReport")
+        fetch("http://localhost:5003/manager/generalReport")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -16,7 +16,7 @@ function Reports() {
                 }
             })
         // Product verilerini çek
-        fetch("https://nur-collection-backend-860749273875.europe-west1.run.app/manager/productList")
+        fetch("http://localhost:5003/manager/productList")
             .then(res => res.json())
             .then(data => { if (data.success) setProducts(data.products); });
     }, []);

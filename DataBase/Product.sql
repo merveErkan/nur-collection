@@ -37,6 +37,7 @@ SELECT * FROM view_product_details;
 
 
 
+
 CREATE TABLE IF NOT EXISTS stock_log (
     log_id SERIAL PRIMARY KEY,
     product_id INT,
@@ -45,7 +46,10 @@ CREATE TABLE IF NOT EXISTS stock_log (
     change_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE OR REPLACE FUNCTION log_stock_changes()--Trigger
+
+
+--Trigger
+CREATE OR REPLACE FUNCTION log_stock_changes()
 RETURNS TRIGGER AS $$
 BEGIN
 
@@ -57,13 +61,16 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
-CREATE OR REPLACE TRIGGER trg_stock_history--Trigger fonksiyonunu çalıştırır
+--Trigger fonksiyonunu çalıştırır
+CREATE OR REPLACE TRIGGER trg_stock_history
 AFTER UPDATE ON Product
 FOR EACH ROW
 EXECUTE FUNCTION log_stock_changes();
 
 SELECT * FROM stock_log ORDER BY change_date DESC;
+
+
+
 
 
 
@@ -75,6 +82,8 @@ BEGIN
     UPDATE product SET quantity = quantity + 1 WHERE product_id = p_id;
 END;
 $$;
+
+
 
 
 -- veriyi işleyip Rapor hazırlar
@@ -106,7 +115,7 @@ $$ LANGUAGE plpgsql;
 
 SELECT get_low_stock_report(1);
 
-DELETE FROM Product
-WHERE product_id = 38;
+
+
 
 SELECT * FROM Product;
